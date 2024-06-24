@@ -39,12 +39,12 @@ export const deleteTask = async (taskId) => {
 
 export const toggleTaskCompletion = async (taskId, task) => {
   try {
-    const taskEdited = {
+    const updatedTask = {
         title: task.title,
         description: task.description,
         completed: !task.completed
     }
-    const response = await axios.put(`${API_URL}/${taskId}`, taskEdited);
+    const response = await axios.put(`${API_URL}/${taskId}`, updatedTask);
     return response.data;
   } catch (error) {
     throw error;
