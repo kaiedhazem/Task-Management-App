@@ -1,0 +1,68 @@
+.task-form {
+  background-color: var(--task-bg-color); /* Background color for task form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 20px; /* Padding inside the form */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+.task-form input[type="text"],
+.task-form textarea {
+  width: 100%; /* Full width for input and textarea */
+  padding: 12px; /* Padding inside input and textarea */
+  margin-bottom: 10px; /* Bottom margin for spacing between inputs */
+  border: 1px solid var(--neutral-color); /* Border color */
+  border-radius: 4px; /* Rounded corners for input and textarea */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.task-form input[type="text"]:focus,
+.task-form textarea:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: var(--primary-color); /* Border color on focus */
+}
+
+.task-form .form-buttons {
+  display: flex; /* Flex container for form buttons */
+  gap: 10px; /* Gap between form buttons */
+}
+
+.task-form button {
+  display: flex; /* Flex container for button content alignment */
+  align-items: center; /* Center alignment for items */
+  justify-content: center; /* Center alignment for content */
+  gap: 5px; /* Gap between icon and text */
+  background-color: var(--primary-color); /* Background color for button */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.task-form button:hover {
+  background-color: var(--secondary-color); /* Background color change on hover */
+}
+
+.task-form button:disabled {
+  background-color: var(--neutral-color); /* Background color for disabled state */
+  cursor: not-allowed; /* Not allowed cursor for disabled state */
+}
+
+.icon-spin {
+  animation: spin 1s infinite linear; /* Animation for spinning icon */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Starting rotation */
+  }
+  to {
+    transform: rotate(360deg); /* Ending rotation */
+  }
+}
+
+.error-message {
+  color: red; /* Text color for error messages */
+}

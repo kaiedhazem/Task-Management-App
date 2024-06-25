@@ -1,0 +1,60 @@
+.task-item {
+  background-color: var(--task-bg-color); /* Background color for task item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 20px; /* Padding around the task item */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.task-item:hover {
+  transform: translateY(-5px); /* Lifts the task item slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.task-header {
+  display: flex; /* Flex container for header */
+  justify-content: space-between; /* Space between items in header */
+  align-items: center; /* Center alignment for items */
+}
+
+.task-header h3 {
+  margin: 0; /* Remove margin for h3 element */
+}
+
+.task-desc {
+  margin: 10px 0; /* Margin for task description */
+}
+
+.task-actions {
+  display: flex; /* Flex container for action buttons */
+  gap: 10px; /* Gap between action buttons */
+}
+
+.action-button {
+  background-color: var(--primary-color); /* Background color for action buttons */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 4px; /* Rounded corners */
+  display: flex; /* Flex container for aligning items */
+  align-items: center; /* Center alignment for items */
+  gap: 5px; /* Gap between icon and text */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.action-button:hover {
+  background-color: var(--secondary-color); /* Background color change on hover */
+}
+
+.action-button.delete:hover {
+  background-color: red; /* Red background color on delete button hover */
+}
+
+.completed {
+  color: green; /* Text color for completed tasks */
+}
+
+.not-completed {
+  color: var(--neutral-color); /* Text color for tasks not completed */
+}
