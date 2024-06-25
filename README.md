@@ -64,7 +64,7 @@ This will start the frontend server at `http://localhost:3000`.
 
 ### Additional Notes
 
-- Make sure Docker is installed to run the frontend Docker container.
+- Make sure Docker is installed to run the frontend and backend Docker containers.
 - Adjust port numbers and configurations as necessary based on your environment.
 
 ## Author : [Hazem Kaied](https://github.com/kaiedhazem)
