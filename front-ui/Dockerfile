@@ -22,7 +22,10 @@ FROM nginx:stable-alpine
 # Copy the build output from the build stage to Nginx's web directory
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80 to allow external access
-EXPOSE 80
+# Copy custom nginx configuration to set port to 3000
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 3000 to allow external access
+EXPOSE 3000
 
 # Nginx is automatically started by the base image's entrypoint, so no CMD needed
