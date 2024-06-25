@@ -1,99 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #0056b3;
-  --neutral-color: #ccc;
-  --background-color: #f8f9fa;
-  --task-bg-color: #fff;
-  --task-hover-bg-color: #f1f1f1;
+  /* Color variables */
+  --primary-color: #007bff; /* Primary color */
+  --secondary-color: #0056b3; /* Secondary color */
+  --neutral-color: #ccc; /* Neutral color */
+  --background-color: #f8f9fa; /* Background color */
+  --task-bg-color: #fff; /* Task background color */
+  --task-hover-bg-color: #f1f1f1; /* Task background color on hover */
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Default font family */
+  background-color: var(--background-color); /* Background color for body */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
 }
 
 /* General App Styling */
 .App {
-  font-family: 'Roboto', sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif; /* Font family */
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center align horizontally */
+  padding: 20px; /* Padding */
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
 
 .App-header {
-  text-align: center;
-  margin-bottom: 30px;
+  text-align: center; /* Center align text */
+  margin-bottom: 30px; /* Bottom margin */
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Flex container */
+  flex-direction: column; /* Column layout */
+  gap: 15px; /* Gap between elements */
+  margin-bottom: 30px; /* Bottom margin */
+  padding: 20px; /* Padding */
+  background-color: white; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
 
 input[type="text"],
 textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  width: 100%; /* Full width */
+  padding: 12px; /* Padding */
+  margin-bottom: 10px; /* Bottom margin */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Box sizing */
+  transition: border-color 0.3s ease; /* Transition */
 }
 
 input[type="text"]:focus,
 textarea:focus {
-  outline: none;
-  border-color: #007bff;
+  outline: none; /* Remove outline */
+  border-color: #007bff; /* Border color on focus */
 }
 
 button {
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin-right: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding */
+  margin-right: 10px; /* Right margin */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Transition */
+  display: flex; /* Flex container */
+  align-items: center; /* Align items */
+  justify-content: center; /* Justify content */
+  gap: 5px; /* Gap between icon and text */
 }
 
 button:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.9); /* Brightness on hover */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Background color for disabled */
+  cursor: not-allowed; /* Not allowed cursor */
 }
 
 /* Specific Button Colors */
 .button-complete {
-  background-color: green;
+  background-color: green; /* Background color for complete button */
 }
 
 .button-incomplete {
-  background-color: gray;
+  background-color: gray; /* Background color for incomplete button */
 }
 
 .button-edit {
-  background-color: #007bff;
+  background-color: #007bff; /* Background color for edit button */
 }
 
 .button-delete {
@@ -106,70 +107,70 @@ button:disabled {
 
 /* Task List Styling */
 .task-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: grid; /* Grid display */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Gap between items */
 }
 
 .task-item {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  background-color: white; /* Background color */
+  padding: 20px; /* Padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
+  display: flex; /* Flex container */
+  flex-direction: column; /* Column layout */
+  justify-content: space-between; /* Space between */
+  gap: 10px; /* Gap between elements */
 }
 
 .task-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Move up on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .task-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Flex container */
+  justify-content: space-between; /* Space between */
+  align-items: center; /* Align items */
 }
 
 .task-header h3 {
-  margin: 0;
+  margin: 0; /* Remove margin */
 }
 
 .task-desc {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Bottom margin */
 }
 
 .task-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
+  display: flex; /* Flex container */
+  flex-wrap: wrap; /* Wrap elements */
+  gap: 10px; /* Gap between elements */
+  justify-content: space-between; /* Space between */
 }
 
 .action-button {
-  flex-grow: 1;
-  margin: 0;
+  flex-grow: 1; /* Grow to fill space */
+  margin: 0; /* Remove margin */
 }
 
 .completed {
-  color: green;
+  color: green; /* Text color for completed */
 }
 
 .not-completed {
-  color: #ccc;
+  color: #ccc; /* Text color for not completed */
 }
 
 /* Responsive Styling */
 @media (max-width: 600px) {
   .task-actions {
-    flex-direction: column;
+    flex-direction: column; /* Column direction */
   }
 
   button {
-    margin-right: 0;
-    width: 100%;
+    margin-right: 0; /* No right margin */
+    width: 100%; /* Full width */
   }
 }
