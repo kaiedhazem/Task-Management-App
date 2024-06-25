@@ -1,5 +1,7 @@
 import React from 'react';
+import { FaCheckCircle, FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { deleteTask, toggleTaskCompletion } from '../services/taskService';
+import '../css/Task.css';
 
 const Task = ({ task, fetchTasks, startEditing }) => {
   const handleToggleCompletion = async () => {
@@ -21,15 +23,26 @@ const Task = ({ task, fetchTasks, startEditing }) => {
   };
 
   return (
-    <div>
-      <h3>{task.title}</h3>
-      <p>{task.description}</p>
-      <p>Completed: {task.completed ? 'Yes' : 'No'}</p>
-      <button onClick={handleToggleCompletion}>
-        {task.completed ? 'Mark Incomplete' : 'Mark Complete'}
-      </button>
-      <button onClick={() => startEditing(task)}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+    <div className="task-item">
+      <div className="task-header">
+        <h3>{task.title}</h3>
+        {task.completed ? <FaCheckCircle className="completed" /> : <FaCheckCircle className="not-completed" />}
+      </div>
+      <p className="task-desc">{task.description}</p>
+      <div className="task-actions">
+        <button
+          className={`action-button ${task.completed ? 'button-incomplete' : 'button-complete'}`}
+          onClick={handleToggleCompletion}
+        >
+          {task.completed ? 'Mark Incomplete' : 'Mark Complete'}
+        </button>
+        <button className="action-button button-edit" onClick={() => startEditing(task)}>
+          <FaEdit /> Edit
+        </button>
+        <button className="action-button button-delete" onClick={handleDelete}>
+          <FaTrashAlt /> Delete
+        </button>
+      </div>
     </div>
   );
 };

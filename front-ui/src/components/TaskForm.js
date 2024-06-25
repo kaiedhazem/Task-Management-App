@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { createTask, updateTask } from '../services/taskService';
+import { FaSave, FaPlus, FaTimes } from 'react-icons/fa';
+import '../css/TaskForm.css';
 
 const TaskForm = ({ task, fetchTasks, startEditing }) => {
-  // Définition de l'état initial vide
   const initialTaskState = { title: '', description: '', completed: false };
   const [editedTask, setEditedTask] = useState(initialTaskState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Mettre à jour l'état du formulaire lorsque la tâche change
   useEffect(() => {
     if (task) {
       setEditedTask({ ...task });
@@ -33,9 +33,9 @@ const TaskForm = ({ task, fetchTasks, startEditing }) => {
       } else {
         await createTask(editedTask);
       }
-      fetchTasks(); // Refetch tasks after updating or creating a task
-      startEditing(null); // Exit edit mode
-      setEditedTask(initialTaskState); // Réinitialiser le formulaire après soumission
+      fetchTasks();
+      startEditing(null);
+      setEditedTask(initialTaskState);
     } catch (error) {
       console.error('Error saving task:', error);
       setError('An error occurred while saving the task. Please try again.');
@@ -45,17 +45,12 @@ const TaskForm = ({ task, fetchTasks, startEditing }) => {
   };
 
   const handleCancel = () => {
-    if (editedTask.title !== task?.title || editedTask.description !== task?.description) {
-      if (!window.confirm('You have unsaved changes. Are you sure you want to cancel?')) {
-        return;
-      }
-    }
-    startEditing(null); // Exit edit mode without saving
-    setEditedTask(initialTaskState); // Réinitialiser le formulaire après annulation
+    startEditing(null);
+    setEditedTask(initialTaskState);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
         name="title"
@@ -72,11 +67,18 @@ const TaskForm = ({ task, fetchTasks, startEditing }) => {
         onChange={handleInputChange}
         required
       />
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button type="submit" disabled={loading}>
-        {loading ? 'Saving...' : task ? 'Save' : 'Add Task'}
-      </button>
-      {task && <button type="button" onClick={handleCancel}>Cancel</button>}
+      {error && <p className="error-message">{error}</p>}
+      <div className="form-buttons">
+        <button type="submit" disabled={loading}>
+          {loading ? <FaSave className="icon-spin" /> : task ? <FaSave /> : <FaPlus />}
+          {loading ? 'Saving...' : task ? 'Save' : 'Add Task'}
+        </button>
+        {task && (
+          <button type="button" onClick={handleCancel}>
+            <FaTimes /> Cancel
+          </button>
+        )}
+      </div>
     </form>
   );
 };
