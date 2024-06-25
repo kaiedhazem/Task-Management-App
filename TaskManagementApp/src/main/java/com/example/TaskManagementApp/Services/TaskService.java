@@ -11,23 +11,23 @@ import java.util.Optional;
 public class TaskService {
 	private final TaskRepository taskRepository;
 
-    // Injection par constructeur
+    // Injection by constructor
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
-
+    // create or update task
     public Task saveOrUpdateTask(Task task) {
         return taskRepository.save(task);
     }
-
+    // get all tasks
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
-
+    // get a specific task by ID
     public Optional<Task> getTaskById(Long id) {
         return taskRepository.findById(id);
     }
-
+    // delete task by ID
     public void deleteTaskById(Long id) {
         taskRepository.deleteById(id);
     }
